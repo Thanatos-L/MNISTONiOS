@@ -376,26 +376,26 @@
 				DEVELOPMENT_TEAM = 84A6Z2YQ4T;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
-					/Users/baidu/Desktop/tensorflow/tensorflow/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/proto/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/eigen/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/protobuf/src/,
+					/Volumes/Transcend/tensorflow/tensorflow/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/proto/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/eigen/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/protobuf/src/,
 				);
 				INFOPLIST_FILE = MNISTTFiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"-force_load",
-					"/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a",
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
-					"/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
+					"/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a",
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
+					"/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
 				);
 				OTHER_LDFLAGS = (
-					"/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
+					"/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
 					"-force_load",
-					"/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a",
+					"/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/lib//libtensorflow-core.a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = example.MNISTTFiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,26 +413,26 @@
 				DEVELOPMENT_TEAM = 84A6Z2YQ4T;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
-					/Users/baidu/Desktop/tensorflow/tensorflow/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/proto/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/eigen/,
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/protobuf/src/,
+					/Volumes/Transcend/tensorflow/tensorflow/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/proto/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/eigen/,
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/downloads/protobuf/src/,
 				);
 				INFOPLIST_FILE = MNISTTFiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"-force_load",
-					"/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a",
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
-					"/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
+					"/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a",
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
+					"/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
 				);
 				OTHER_LDFLAGS = (
-					"/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
-					/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
+					"/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a",
+					/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a,
 					"-force_load",
-					"/Users/baidu/Desktop/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a",
+					"/Volumes/Transcend/tensorflow/tensorflow/tensorflow/contrib/makefile/gen/lib//libtensorflow-core.a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = example.MNISTTFiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -163,7 +163,7 @@ static constexpr int kInputLength = kImageSide * kImageSide;
 }
 
 -(void)predict {
-    NSLog(@"lyde predict");
+    // 1. 读取图片，将图片scale，读取像素做normalize
     UIImage *orignalImage = [UIImage imageNamed:@"9-1.png"];
     UIImage *scaledImage = [self scaleImage:orignalImage];
     UIImage *image = [self convertImageToGrayScale:scaledImage];
@@ -177,34 +177,24 @@ static constexpr int kInputLength = kImageSide * kImageSide;
     
     for (auto i = 0; i < kInputLength; i++) {
         UIColor *color = pixel[i];
-        //NSLog(@"ooo color%@",[color description]);
-        //const CGFloat *components = CGColorGetComponents(color.CGColor);
         CGFloat red = 0.0, green = 0.0, blue = 0.0, alpha =0.0;
         [color getRed:&red green:&green blue:&blue alpha:&alpha];
-        //NSLog(@"componest%f",components[0]);
         x.matrix<float>().operator()(0,i) = (255.0 - red) / 255.0f;
         NSLog(@"%f",x.matrix<float>().operator()(0,i));
     }
-    
-//    for (auto i = 0; i < pixel.count; i++) {
-//        UIColor *color = pixel[i];
-//        const CGFloat *components = CGColorGetComponents(color.CGColor);
-//        x.matrix<float>().operator()(0,i) = (255.0 - components[0]) / 255.0f;
-//        NSLog(@"%f",x.matrix<float>().operator()(0,i));
-//    }
-    
+    // 2. 放入input
     std::vector<std::pair<tensorflow::string, tensorflow::Tensor>> inputs = {
         {"x", x}
     };
     
     std::vector<std::string> nodes = {
         {"softmax"}
-        //{"y_pred"}
     };
     
     const auto start = CACurrentMediaTime();
     
     std::vector<tensorflow::Tensor> outputs;
+    // 3. 跑网络
     auto status = session->Run(inputs, nodes, {}, &outputs);
     if (!status.ok()) {
        NSLog(@"Error reading graph: %s", status.error_message().c_str());
@@ -212,7 +202,7 @@ static constexpr int kInputLength = kImageSide * kImageSide;
     }
     
     NSLog(@"Time: %g seconds", CACurrentMediaTime() - start);
-    
+    // 4. 拿到输出，获得结果
     const auto outputMatrix = outputs[0].matrix<float>();
     float bestProbability = 0;
     int bestIndex = -1;
@@ -223,7 +213,7 @@ static constexpr int kInputLength = kImageSide * kImageSide;
             bestIndex = i;
         }
     }
-    NSLog(@"lyde !!!!!!!!!!! result %d",bestIndex);
+    NSLog(@"!!!!!!!!!!! result %d",bestIndex);
 }
 
 #pragma mark - process image for input
