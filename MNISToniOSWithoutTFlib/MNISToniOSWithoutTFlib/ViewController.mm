@@ -227,8 +227,12 @@ static constexpr int kImageSide4 = kImageSide / 4;
 
     const size_t numSlices = (resultImage.featureChannels + 3)/4;
     float16_t halfs[numSlices * 4];
+    NSLog(@"size of float16_t %lu",sizeof(float16_t));
     for (size_t i = 0; i < numSlices; i += 1) {
         [resultImage.texture getBytes:&halfs[i * 4] bytesPerRow:8 bytesPerImage:8 fromRegion:MTLRegionMake3D(0, 0, 0, 1, 1, 1) mipmapLevel:0 slice:i];
+        for (size_t j = i * 4; j < i * 4 + 4; j++) {
+            NSLog(@"half %zu %f", j, halfs[j]);
+        }
     }
     
     float results[kOutputs];
