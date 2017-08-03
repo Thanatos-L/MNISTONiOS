@@ -235,32 +235,41 @@ static constexpr int kImageSide4 = kImageSide / 4;
         }
     }
     
-    float results[kOutputs];
-    
-    vImage_Buffer fullResultVImagebuf;
-    fullResultVImagebuf.data = results;
-    fullResultVImagebuf.height = 1;
-    fullResultVImagebuf.width = kOutputs;
-    fullResultVImagebuf.rowBytes = kOutputs * 4;
-    
-    vImage_Buffer halfResultVImagebuf;
-    halfResultVImagebuf.data = halfs;
-    halfResultVImagebuf.height = 1;
-    halfResultVImagebuf.width = kOutputs;
-    halfResultVImagebuf.rowBytes = kOutputs * 2;
-    
-    vImageConvert_Planar16FtoPlanarF(&halfResultVImagebuf, &fullResultVImagebuf, 0);
-    
+//    float results[kOutputs];
+//    
+//    vImage_Buffer fullResultVImagebuf;
+//    fullResultVImagebuf.data = results;
+//    fullResultVImagebuf.height = 1;
+//    fullResultVImagebuf.width = kOutputs;
+//    fullResultVImagebuf.rowBytes = kOutputs * 4;
+//    
+//    vImage_Buffer halfResultVImagebuf;
+//    halfResultVImagebuf.data = halfs;
+//    halfResultVImagebuf.height = 1;
+//    halfResultVImagebuf.width = kOutputs;
+//    halfResultVImagebuf.rowBytes = kOutputs * 2;
+//    
+//    vImageConvert_Planar16FtoPlanarF(&halfResultVImagebuf, &fullResultVImagebuf, 0);
+//    
+//    int bestIndex = -1;
+//    float bestProbability = 0;
+//    for (auto i = 0; i < kOutputs; i++) {
+//        const auto probability = results[i];
+//        if (probability > bestProbability) {
+//            bestProbability = probability;
+//            bestIndex = i;
+//        }
+//    }
     int bestIndex = -1;
     float bestProbability = 0;
     for (auto i = 0; i < kOutputs; i++) {
-        const auto probability = results[i];
+        const auto probability = halfs[i];
         if (probability > bestProbability) {
             bestProbability = probability;
             bestIndex = i;
         }
     }
-    
+
     NSLog(@"lydebug predict %d",bestIndex);
     [self setPredictLabel:(NSInteger) bestIndex];
     
