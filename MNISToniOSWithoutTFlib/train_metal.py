@@ -52,6 +52,7 @@ train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 correct_prediction = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y_, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 init = tf.initialize_all_variables()
+saver = tf.train.Saver()
 session.run(init)
 
 for i in range(20000):
@@ -62,6 +63,30 @@ for i in range(20000):
     })
     print("step %d, training accuracy %g" % (i, train_accuracy))
   train_step.run(feed_dict={x: batch[0], y_: batch[1]})
+  if i % 1000 == 0:
+    print("save weights")
+    with open('W_conv1', 'w') as f:
+      W_conv1_p = tf.transpose(W_conv1, perm=[3, 0, 1, 2])
+      f.write(session.run(W_conv1_p).tobytes())
+    with open('b_conv1', 'w') as f:
+      f.write(session.run(b_conv1).tobytes())
+    with open('W_conv2', 'w') as f:
+      W_conv2_p = tf.transpose(W_conv2, perm=[3, 0, 1, 2])
+      f.write(session.run(W_conv2_p).tobytes())
+    with open('b_conv2', 'w') as f:
+      f.write(session.run(b_conv2).tobytes())
+    with open('W_fc1', 'w') as f:
+      W_fc1_shp = tf.reshape(W_fc1, [7,7,64,1024])
+      W_fc1_p = tf.transpose(W_fc1_shp, perm=[3, 0, 1, 2])
+      f.write(session.run(W_fc1_p).tobytes())
+    with open('b_fc1', 'w') as f:
+      f.write(session.run(b_fc1).tobytes())
+    with open('W_fc2', 'w') as f:
+      W_fc2_shp = tf.reshape(W_fc2, [1,1,1024,10])
+      W_fc2_p = tf.transpose(W_fc2_shp, perm=[3, 0, 1, 2])
+      f.write(session.run(W_fc2_p).tobytes())
+    with open('b_fc2', 'w') as f:
+      f.write(session.run(b_fc2).tobytes())
 
 print("test accuracy %g" % accuracy.eval(feed_dict={
   x: mnist.test.images, y_: mnist.test.labels
